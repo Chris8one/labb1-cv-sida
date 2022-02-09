@@ -1,0 +1,385 @@
+/******** Imported Fonts ******/
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,400,500,600,700|Oswald:100,200,300,400,500,600,700");
+
+/******** Variables ******/
+
+:root {
+  --gray: #6e6e6e;
+  --green: #bcfd4c;
+}
+
+/******** Misc ******/
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0 auto;
+}
+
+.hr-grad {
+  border: 0;
+  height: 0.1rem;
+  background-image: linear-gradient(
+    to right,
+    rgba(110, 110, 110, 0),
+    rgba(188, 253, 76),
+    rgba(110, 110, 110, 0)
+  );
+}
+
+.hr-grad-bottom {
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    to right,
+    rgba(110, 110, 110, 0),
+    rgba(188, 253, 76),
+    rgba(110, 110, 110, 0)
+  );
+}
+
+/******** Main Container ******/
+
+.base-container {
+  margin: 0 auto;
+  display: grid;
+  max-width: 1440px;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.1fr 0.05fr 2fr 0.05fr 0.1fr;
+  grid-template-areas:
+    "logo nav nav nav"
+    "logo header header header"
+    "hr-top hr-top hr-top hr-top"
+    "main main main main"
+    "hr-bottom hr-bottom hr-bottom hr-bottom"
+    "footer footer footer footer";
+}
+
+.test {
+  background-color: var(--gray);
+  /* margin: 2px; */
+}
+
+/******** Logo ******/
+
+.logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  grid-area: logo;
+  padding-left: 3rem;
+}
+
+.logo a {
+  font-size: 4.5rem;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: bold;
+  transition: all ease-in-out 250ms;
+}
+
+.img-text {
+  color: var(--green);
+  font-weight: bold;
+  position: relative;
+  padding-right: 1rem;
+  background: url("/assets/images/image_back.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all ease-in-out 250ms;
+}
+
+.img-text:hover {
+  filter: saturate(0%);
+  font-weight: bold;
+  transition: all ease-in-out 250ms;
+}
+
+/******** Main Navigation Bar ******/
+
+.main-nav {
+  grid-area: nav;
+  display: grid;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  /* justify-content: end;
+      align-items: center; */
+  margin-right: 3rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+  color: white;
+  /* font-weight: bold; */
+  padding-right: 3rem;
+  position: relative;
+  transition: all ease-in-out 250ms;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 0.2rem;
+  width: 0%;
+  background-color: var(--green);
+  bottom: -1rem;
+  transition: all ease-in-out 250ms;
+}
+
+.main-nav a:hover::after {
+  width: 60%;
+}
+
+.main-nav a:hover {
+  color: var(--green);
+}
+
+.main-nav li a.active {
+  color: var(--green);
+}
+
+/******** Header ******/
+
+.header {
+  grid-area: header;
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  padding-right: 3rem;
+  font-family: Oswald;
+  font-size: 2rem;
+  color: white;
+}
+
+/****** HR Custom ******/
+
+.hr-div1 {
+  grid-area: hr-top;
+  background-color: var(--gray);
+}
+
+.hr-div2 {
+  grid-area: hr-bottom;
+  background-color: var(--gray);
+}
+
+/******** Main Content ******/
+
+main {
+  grid-area: main;
+}
+
+.main-container {
+  background-color: var(--gray);
+  display: grid;
+  height: 100%;
+  width: 100;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.main-text {
+  color: white;
+  font-family: Oswald;
+  font-size: 4rem;
+}
+
+.text-div {
+  background-color: rgba(188, 253, 76, 0.5);
+  /* background-color: rgba(88, 84, 84, 0.5); */
+  grid-area: 2 / 2 / span 5 / span 6;
+  display: grid;
+  justify-content: end;
+  align-items: flex-end;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.img-div {
+  background: url(/assets/images/chris.jpg);
+  background-size: cover;
+  filter: saturate(0);
+  grid-area: 4 / 5 / span 6 / span 7;
+}
+
+/****** About Me Content ******/
+
+.history-items {
+  margin-bottom: 30px;
+}
+
+.history-heading {
+  color: var(--green);
+  margin-bottom: 50px;
+}
+
+.timeline-item {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  color: #fafafa;
+  border-left: 1px solid;
+  border-color: var(--green);
+}
+
+.timeline-item p {
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item:before {
+  content: attr(data-dates);
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  /* display: block; */
+  font-family: Oswald, sans-serif;
+  font-weight: 500;
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item:after {
+  width: 0.6rem;
+  height: 0.6rem;
+  display: block;
+  top: 1.1em;
+  position: absolute;
+  left: -0.3rem;
+  border-radius: 0.6rem;
+  content: "";
+  background: var(--green);
+}
+
+.work-history-div {
+  background-color: rgba(110, 110, 10, 0.5);
+  grid-area: 2 / 2 / span 5 / span 6;
+  display: grid;
+  justify-content: start;
+  align-items: start;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.aboutme-div {
+  background: url(/assets/images/chris.jpg);
+  background-size: cover;
+  filter: saturate(0);
+  grid-area: 4 / 5 / span 6 / span 7;
+}
+
+/******** Footer ******/
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.copyright {
+  color: white;
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+/******** Social Media Links ******/
+
+.social-media-links {
+  top: 83%;
+  left: 0;
+  transform: translateY(-40%);
+  position: fixed;
+  z-index: 100;
+}
+
+.social-media-links a {
+  color: var(--green);
+}
+
+.social-media-links ul {
+  padding: initial;
+  font-size: 1rem;
+}
+
+.social-media-links ul li {
+  height: 1.2rem;
+  width: 1.8rem;
+  list-style-type: none;
+  padding-left: 0.8rem;
+  margin-top: 0.1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.social-media-links a:hover {
+  display: block;
+  color: var(--gray);
+}
+
+.social-media-links ul li:hover {
+  background: rgba(188, 253, 76, 0.6);
+  padding-left: 1.2rem;
+  width: 1.7rem;
+  transition: 0.5s;
+}
+
+.social-media-links-small {
+  visibility: hidden;
+  font-size: 20px;
+}
+
+.border-top-right {
+  position: relative;
+}
+.border-top-right:before,
+.border-top-right:after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+.border-top-right:before {
+  bottom: -3px;
+  width: 3px;
+  background-image: gradient(
+    linear,
+    0 100%,
+    0 0,
+    from(var(--gray)),
+    to(transparent)
+  );
+  background-image: -webkit-linear-gradient(#bcfd4c, transparent);
+  background-image: -moz-linear-gradient(#bcfd4c, transparent);
+  background-image: -o-linear-gradient(#bcfd4c, transparent);
+}
+.border-top-right:after {
+  left: -3px;
+  height: 3px;
+  background-image: gradient(
+    linear,
+    0 0,
+    100% 0,
+    from(#bcfd4c),
+    to(transparent)
+  );
+  background-image: -webkit-linear-gradient(right, #bcfd4c, transparent);
+  background-image: -moz-linear-gradient(right, #bcfd4c, transparent);
+  background-image: -o-linear-gradient(right, #bcfd4c, transparent);
+}
